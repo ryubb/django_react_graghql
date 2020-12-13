@@ -1,0 +1,24 @@
+[
+  {
+    "model": "graphql_app.UserModel",
+    "pk": 1,
+    "fields": {
+      "email": "ryubb1108@gmail.com",
+      "password": "pbkdf2_sha256$150000$ZijF5lSAJyXF$5nwE2uU180LBsWOmkCpC+wmG6uWy3J6Csy6LtGP23LY=",
+      "tel_number": "012-3456-7890",
+      "name": "テストユーザー",
+      "name_kana": "テストユーザー"
+    }
+  },
+  {
+    "model": "graphql_app.UserModel",
+    "pk": 2,
+    "fields": {
+      "email": "ryubb1108+1@gmail.com",
+      "password": "pbkdf2_sha256$150000$ZijF5lSAJyXF$5nwE2uU180LBsWOmkCpC+wmG6uWy3J6Csy6LtGP23LY=",
+      "tel_number": "012-3456-7890",
+      "name": "テストユーザー",
+      "name_kana": "テストユーザー"
+    }
+  }
+]

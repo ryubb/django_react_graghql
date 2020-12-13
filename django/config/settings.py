@@ -25,7 +25,12 @@ SECRET_KEY = '&zqujy8a)*l-2&vxa=)e^-v_*3#%$vj2w-$-f+4z^0qziip3-6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 
 # Application definition
@@ -37,7 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party app
+    'corsheaders',
     'graphene_django',
+
+    # my app
     'graphql_app.apps.GraphqlAppConfig',
 ]
 
@@ -49,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -101,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'graphql_app.UserModel'
 
 GRAPHENE = {
     'SCHEMA': 'graphql_app.schema.schema'
