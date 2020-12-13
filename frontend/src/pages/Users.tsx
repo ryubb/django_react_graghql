@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 const EXCHANGE_RATES = gql`
   query User {
     users {
-      email, name, nameKana, telNumber
+      id, email, name, nameKana, telNumber
     }
   }
 `;
@@ -21,31 +21,29 @@ const  Users = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.users.map(({ email, name, nameKana, telNumber }: any) => (
-    <>
-      <List key={email}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="name" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary={`${name}(${nameKana})`}
-            secondary={
-              <>
-                <Typography
-                  component="span"
-                  variant="body2"
-                  color="textPrimary"
-                >
-                  {telNumber}
-                </Typography>
-              </>
-            }
-          />
-        </ListItem>
-        <Divider variant="inset" component="li" />
-      </List>
-    </>
+  return data.users.map(({ id, email, name, nameKana, telNumber }: any) => (
+    <List key={id}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="name" src="/static/images/avatar/1.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary={`${name}(${nameKana})`}
+          secondary={
+            <>
+              <Typography
+                component="span"
+                variant="body2"
+                color="textPrimary"
+              >
+                {telNumber}
+              </Typography>
+            </>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+    </List>
   ));
 }
 
