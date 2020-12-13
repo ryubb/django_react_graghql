@@ -4,6 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [scripts]
+local = "python manage.py runserver"
+migration = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
 loaddata = "python manage.py loaddata initial_data.json"
 
 [dev-packages]
